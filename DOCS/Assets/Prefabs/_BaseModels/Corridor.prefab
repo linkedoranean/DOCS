@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 247129133342748265}
   - component: {fileID: 6008529681149986833}
   - component: {fileID: 9187994399996346757}
+  - component: {fileID: 9167143336237333638}
   m_Layer: 6
   m_Name: Corridor
   m_TagString: Untagged
@@ -103,5 +104,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9, y: 5, z: 4.5}
+  m_Size: {x: 9, y: 5.5, z: 4.5}
   m_Center: {x: 0, y: 0, z: 2.25}
+--- !u!114 &9167143336237333638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447271610161864696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5066ffa4cdb7da4295b32d442a67ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileRenderer: {fileID: 6008529681149986833}
+  tileCollider: {fileID: 9187994399996346757}
+  children:
+  - {fileID: 0}

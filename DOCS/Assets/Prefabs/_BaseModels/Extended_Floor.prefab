@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4006068175746165850}
   - component: {fileID: 8630970131350398078}
   - component: {fileID: 9117294094251141914}
+  - component: {fileID: 1227081033343449345}
+  - component: {fileID: 6860436957694546294}
   m_Layer: 0
   m_Name: Extended_Floor
   m_TagString: Untagged
@@ -83,3 +85,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1227081033343449345
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236512425831612533}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 13.5, z: 4.5}
+  m_Center: {x: 0, y: 0, z: 2.25}
+--- !u!114 &6860436957694546294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236512425831612533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5066ffa4cdb7da4295b32d442a67ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileRenderer: {fileID: 9117294094251141914}
+  tileCollider: {fileID: 1227081033343449345}
+  children:
+  - {fileID: 0}

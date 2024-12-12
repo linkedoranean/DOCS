@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8409620815196327945}
   - component: {fileID: 2516984224889141778}
   - component: {fileID: 101966981693157428}
-  m_Layer: 0
+  - component: {fileID: 8993745400320640292}
+  m_Layer: 6
   m_Name: Corridor_Inverted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9, y: 5, z: 4.5}
   m_Center: {x: 0, y: 0, z: 2.25}
+--- !u!114 &8993745400320640292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461461715855670384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5066ffa4cdb7da4295b32d442a67ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileRenderer: {fileID: 2516984224889141778}
+  tileCollider: {fileID: 101966981693157428}
+  children:
+  - {fileID: 0}
