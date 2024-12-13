@@ -50,6 +50,6 @@ public class TileManager : MonoBehaviour
         }
         
         OnDiscovered?.Invoke(transform.name);
-        Debug.LogError(transform.name);
+        //Debug.LogError(transform.name);
     }
 }

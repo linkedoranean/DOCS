@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementInput : MonoBehaviour
@@ -139,7 +138,8 @@ public class MovementInput : MonoBehaviour
         {
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, goalPos, playerSpeed);
 
-            if (Math.Abs(transform.localPosition.z - goalPos.z) < 0.001f)
+            if (Math.Abs(transform.localPosition.z - goalPos.z) < 0.001f &&
+                Math.Abs(transform.localPosition.x - goalPos.x) < 0.001f)
             {
                 allowInput = true;
                 moving = false;
@@ -227,7 +227,8 @@ public class MovementInput : MonoBehaviour
 
     void ChangeRotationDirection()
     {
-        if (Math.Abs(transform.eulerAngles.y - 1) < 1f ||
+        if (Math.Abs(transform.eulerAngles.y - 0) < 1f ||
+            Math.Abs(transform.eulerAngles.y - 1) < 1f ||
             Math.Abs(transform.eulerAngles.y - 360) < 1f)
         {
             if (goalRot.y == 90 ||
@@ -309,7 +310,7 @@ public class MovementInput : MonoBehaviour
         {
             var position = transform.localPosition;
 
-            goalPos.x = Mathf.Ceil(position.z - 9);
+            goalPos.x = Mathf.Ceil(position.x - 9);
             goalPos.y = position.y;
             goalPos.z = position.z;
         }
@@ -318,9 +319,20 @@ public class MovementInput : MonoBehaviour
         {
             var position = transform.localPosition;
 
-            goalPos.x = Mathf.Ceil(position.z + 9);
+            goalPos.x = Mathf.Ceil(position.x + 9);
             goalPos.y = position.y;
             goalPos.z = position.z;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DirectionInfo"))
+        {
+            canMoveUp = other.GetComponent<DirectionInfoManager>().canGoUp;
+            canMoveDown = other.GetComponent<DirectionInfoManager>().canGoDown;
+            canMoveLeft = other.GetComponent<DirectionInfoManager>().canGoLeft;
+            canMoveRight = other.GetComponent<DirectionInfoManager>().canGoRight;
         }
     }
 }
