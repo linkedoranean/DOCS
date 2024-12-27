@@ -270,6 +270,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorSide: 0
   currentDoorStatus: 0
-  doorSpeed: -0.1
+  doorSpeed: 0.1
   endingPos: -1.5
   goalPos: {x: 0, y: 0, z: 0}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class TileManager : MonoBehaviour
     public delegate void TileAction(string name);
     public static event TileAction OnDiscovered;
     
-    [SerializeField] private MeshRenderer tileRenderer;
+    //[SerializeField] private MeshRenderer tileRenderer;
 
     [SerializeField] private BoxCollider tileCollider;
     
@@ -17,11 +18,18 @@ public class TileManager : MonoBehaviour
     
     void Awake()
     {
-        tileRenderer = GetComponent<MeshRenderer>();
+        //tileRenderer = GetComponent<MeshRenderer>();
         tileCollider = GetComponent<BoxCollider>();
-        tileRenderer.enabled = false;
+        //tileRenderer.enabled = false;
+
+        TileMasterManager.OnLoaded += CheckNameReceived;
     }
-    
+
+    void OnDestroy()
+    {
+        TileMasterManager.OnLoaded -= CheckNameReceived;
+    }
+
     void Start()
     {
         children = new List<Transform>();
@@ -36,10 +44,18 @@ public class TileManager : MonoBehaviour
         }
     }
 
+    private void CheckNameReceived(string nameReceived)
+    {
+        if (nameReceived == transform.name)
+        {
+            DisplayTile();
+        }
+    }
+
     public void DisplayTile()
     {
         tileCollider.enabled = false;
-        tileRenderer.enabled = true;
+        //tileRenderer.enabled = true;
         
         if (children.Count != 0)
         {

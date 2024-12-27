@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 994391071105800001}
   - component: {fileID: 8409620815196327945}
   - component: {fileID: 2516984224889141778}
-  - component: {fileID: 101966981693157428}
-  - component: {fileID: 8993745400320640292}
   m_Layer: 6
   m_Name: Corridor_Inverted
   m_TagString: Untagged
@@ -86,43 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &101966981693157428
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461461715855670384}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 9, y: 5, z: 4.5}
-  m_Center: {x: 0, y: 0, z: 2.25}
---- !u!114 &8993745400320640292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461461715855670384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5066ffa4cdb7da4295b32d442a67ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileRenderer: {fileID: 2516984224889141778}
-  tileCollider: {fileID: 101966981693157428}
-  children:
-  - {fileID: 0}
 --- !u!1 &5686177364412234823
 GameObject:
   m_ObjectHideFlags: 0

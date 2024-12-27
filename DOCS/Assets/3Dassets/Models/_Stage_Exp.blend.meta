@@ -69,6 +69,86 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Wide_Extended_WallWithDoor
     second: {fileID: 2100000, guid: 0c24fcda7e95de44e9c82187eceb04e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _DoorDouble_L_AO
+    second: {fileID: 2100000, guid: b85e5a95d526e5e49ac606f9323306b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _DoorDouble_Wall_U_AO
+    second: {fileID: 2100000, guid: 1bfc87560184e95468e983d716521106, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _DoorDouble_Wall_U_Inverted_
+    second: {fileID: 2100000, guid: e5df119a7e8a1ec4585566f6f46c4c43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_AO
+    second: {fileID: 2100000, guid: d439a000fa5e2254aa394e0dd3bbfb58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Corridor_AO
+    second: {fileID: 2100000, guid: 23b0a64b928163f479952d023538e5ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_WallDouble_U_AO
+    second: {fileID: 2100000, guid: 2b32af37d7a1b4c48b2b6fc6a08538f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_WallDouble_U_Inverted_AO
+    second: {fileID: 2100000, guid: f962519789904dd4d8cede35df9fa6b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Wall_Corridor_AO
+    second: {fileID: 2100000, guid: 010b267527bf8a141876afb08712e3f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Wall_L_AO
+    second: {fileID: 2100000, guid: c7c1c1b68a5c7604c9d53a6d480f2fa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Wall_L_Inverted_AO
+    second: {fileID: 2100000, guid: df36caa874f4dad448622ceeec4dd4cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Wall_U_AO
+    second: {fileID: 2100000, guid: 081ff0a2356d0e24aa70748f43e78eed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Door_Wall_U_Inverted_AO
+    second: {fileID: 2100000, guid: c57450c077a3db24dbb2f655ddb89adf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Floor_Base_AO
+    second: {fileID: 2100000, guid: e268a0a5633484e4c9168cacc5f589db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Wall_AO
+    second: {fileID: 2100000, guid: b38758f4b2314044db6607dde2b3c4d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Wall_Corridor_AO
+    second: {fileID: 2100000, guid: 13c58634482b319409e482b70cc17f27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Wall_L_AO
+    second: {fileID: 2100000, guid: 3ced5d456c551164982c622cf1f81c2f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
