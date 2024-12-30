@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5066ffa4cdb7da4295b32d442a67ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileRenderer: {fileID: 9117294094251141914}
   tileCollider: {fileID: 1227081033343449345}
   children:
   - {fileID: 0}
@@ -142,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6348915316925944176
 Transform:
   m_ObjectHideFlags: 0

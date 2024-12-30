@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 3457210309041536250}
   m_Layer: 0
   m_Name: DoorManager_Wide
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,11 +272,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144be2189fcd324993edeee4eb8a073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDoorLocked: 0
+  doorType: 0
+  managerBrother: {fileID: 0}
   doors:
   - {fileID: 8587388150804266184}
   - {fileID: 1151445061342053974}
   - {fileID: 9140914599299918035}
   - {fileID: 5546082630423043731}
+  unlockedUp: 0
+  unlockedDown: 0
+  unlockedLeft: 0
+  unlockedRight: 0
+  lockedUp: 0
+  lockedDown: 0
+  lockedLeft: 0
+  lockedRight: 0
 --- !u!1 &8587388150804266184
 GameObject:
   m_ObjectHideFlags: 0

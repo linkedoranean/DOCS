@@ -32,9 +32,13 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private bool lockedLeft;
     [SerializeField] private bool lockedRight;
 
+    [SerializeField] private BoxCollider doorCollider;
+
     void Awake()
     {
         managerBrother = transform.parent.Find("MovementInfo").gameObject;
+
+        doorCollider = GetComponent<BoxCollider>();
 
         if (isDoorLocked)
         {
@@ -55,10 +59,10 @@ public class DoorManager : MonoBehaviour
             {
                 isDoorLocked = true;
                 
-                other.GetComponent<MovementInput>().canMoveUp = lockedUp;
-                other.GetComponent<MovementInput>().canMoveDown = lockedDown;
-                other.GetComponent<MovementInput>().canMoveLeft = lockedLeft;
-                other.GetComponent<MovementInput>().canMoveRight = lockedRight;
+                other.GetComponent<MovementManager>().canMoveUp = lockedUp;
+                other.GetComponent<MovementManager>().canMoveDown = lockedDown;
+                other.GetComponent<MovementManager>().canMoveLeft = lockedLeft;
+                other.GetComponent<MovementManager>().canMoveRight = lockedRight;
                 
                 var tempKey = other.GetComponent<DoorKeyManager>();
 
@@ -104,11 +108,22 @@ public class DoorManager : MonoBehaviour
                     door.GetComponent<DoorAnimManager>().OpenDoor();
                 }
 
-                other.GetComponent<MovementInput>().canMoveUp = unlockedUp;
-                other.GetComponent<MovementInput>().canMoveDown = unlockedDown;
-                other.GetComponent<MovementInput>().canMoveLeft = unlockedLeft;
-                other.GetComponent<MovementInput>().canMoveRight = unlockedRight;
+                //other.GetComponent<MovementManager>().canMoveUp = unlockedUp;
+                //other.GetComponent<MovementManager>().canMoveDown = unlockedDown;
+                //other.GetComponent<MovementManager>().canMoveLeft = unlockedLeft;
+                //other.GetComponent<MovementManager>().canMoveRight = unlockedRight;
+
+                doorCollider.enabled = false;
+
+                /*
+                Vector3 colliderPos;
+
+                colliderPos.x = doorCollider.center.x;
+                colliderPos.y = 4;
+                colliderPos.z = doorCollider.center.z;
                 
+                doorCollider.center = colliderPos;
+                */
                 //managerBrother.SetActive(true);
             }
         }
@@ -116,12 +131,16 @@ public class DoorManager : MonoBehaviour
     
     void OnTriggerExit(Collider other)
     {
+        /*
         if (other.CompareTag("Player"))
         {
             foreach (GameObject door in doors)
             {
                 door.GetComponent<DoorAnimManager>().CloseDoor();
+                
+                doorCollider.center = new Vector3(0, 2.25f, 4.5f);
             }
         }
+        */
     }
 }

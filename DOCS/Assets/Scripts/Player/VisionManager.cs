@@ -2,23 +2,26 @@ using UnityEngine;
 
 public class VisionManager : MonoBehaviour
 {
+    //TODO nesse script precisa atirar raycast em todas as direções para saber se pode movimentar ao redor
+    //por enquanto o script só verifica se pode andar pra frente
+
     private LayerMask layerMask;
     [SerializeField] private float hitDistance;
-
+    
     void Awake()
     {
         layerMask = LayerMask.GetMask("FloorTile");
-        MovementInput.OnMoved += CastRaycast;
+        CharactersManager.OnMoved += CastRaycast;
     }
 
     void OnDestroy()
     {
-        MovementInput.OnMoved -= CastRaycast;
+        CharactersManager.OnMoved -= CastRaycast;
     }
 
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * hitDistance, Color.green);
+        //Debug.DrawRay(transform.position, transform.forward * hitDistance, Color.green);
     }
 
     void CastRaycast()
