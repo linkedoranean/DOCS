@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -73,8 +74,30 @@ public class SurroundChecker : MonoBehaviour
             {
                 Vector3 hitPos;
 
-                hitPos = hit.transform.position;
+                //hitPos = hit.transform.position;
+                hitPos = transform.position;
+                hitPos.y = 0f;
+
+                if (Math.Abs(raycastDirection.z - 1) < 0.1f)
+                {
+                    hitPos.z = hitPos.z + 10f;
+                }
                 
+                if (Math.Abs(raycastDirection.z - (-1)) < 0.1f)
+                {
+                    hitPos.z = hitPos.z - 10f;
+                }
+                
+                if (Math.Abs(raycastDirection.x - 1) < 0.1f)
+                {
+                    hitPos.x = hitPos.x + 10f;
+                }
+                
+                if (Math.Abs(raycastDirection.x - (-1)) < 0.1f)
+                {
+                    hitPos.x = hitPos.x - 10f;
+                }
+
                 OnSurroundChecked?.Invoke(hitPos, registeredDirection);
             }
         }

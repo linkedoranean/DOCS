@@ -4,7 +4,7 @@ using UnityEngine;
 public class MovementManager : MonoBehaviour
 {
     public delegate void CharAction(string movementReached);
-    public static event CharAction OnMoved;
+    //public static event CharAction OnMoved;
     public static event CharAction OnFinished;
     
     [SerializeField] public bool moving;
@@ -18,13 +18,13 @@ public class MovementManager : MonoBehaviour
     void Awake()
     {
         SurroundChecker.OnSurroundChecked += SetupCharacterMove_Initial;
-        RelocatorManager.OnRelocated += SetupCharacterMove_Relocated;
+        //RelocatorManager.OnRelocated += SetupCharacterMove_Relocated;
     }
     
     void OnDestroy()
     {
         SurroundChecker.OnSurroundChecked -= SetupCharacterMove_Initial;
-        RelocatorManager.OnRelocated -= SetupCharacterMove_Relocated;
+        //RelocatorManager.OnRelocated -= SetupCharacterMove_Relocated;
     }
     
     void FixedUpdate()
@@ -55,6 +55,7 @@ public class MovementManager : MonoBehaviour
 
     }
     
+    /*
     void SetupCharacterMove_Relocated(Vector3 receivedPos)
     {
         transform.position = receivedPos;
@@ -64,7 +65,9 @@ public class MovementManager : MonoBehaviour
         moving = true;
 
     }
+    */
 
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Mover"))
@@ -76,4 +79,5 @@ public class MovementManager : MonoBehaviour
             OnMoved?.Invoke(direction);
         }
     }
+    */
 }
