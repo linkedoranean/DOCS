@@ -272,6 +272,7 @@ public class MovementManager : MonoBehaviour
     
     [SerializeField] private float playerSpeed;
     [SerializeField] private float hitDistance;
+    [SerializeField] private float elevatorTravel;
     
     [SerializeField] private bool canWalk;
     [SerializeField] private bool canTakeElevatorUp;
@@ -593,13 +594,17 @@ public class MovementManager : MonoBehaviour
             
             if (receivedInput == "key_W_pressed")
             {
-                currentState = PlayerState.ExitingElevator;
-                charAnim.SetTrigger("walk");
-                //charAnim.Play("enterElevatorUp");
-                canExitElevator = true;
-                ManageStatus();
+                if (!elevatorGoingUp &&
+                    !elevatorGoingDown)
+                {
+                    currentState = PlayerState.ExitingElevator;
+                    charAnim.SetTrigger("walk");
+                    //charAnim.Play("enterElevatorUp");
+                    canExitElevator = true;
+                    ManageStatus();
                         
-                return;
+                    return;
+                }
             }
         }
         
@@ -821,7 +826,7 @@ public class MovementManager : MonoBehaviour
                 pressedToGoUp = false;
                 
                 var currentPos = transform.position;
-                currentPos.y += 9f;
+                currentPos.y += elevatorTravel;
 
                 goalPos = currentPos;
             
@@ -843,7 +848,7 @@ public class MovementManager : MonoBehaviour
                 pressedToGoDown = false;
                 
                 var currentPos = transform.position;
-                currentPos.y -= 9f;
+                currentPos.y -= elevatorTravel;
 
                 goalPos = currentPos;
             
@@ -856,9 +861,11 @@ public class MovementManager : MonoBehaviour
     {
         if (other.CompareTag("ElevatorUp"))
         {
-            elevatorMessage_A = other.GetComponent<DoorAnimManager>().upperID;
-            elevatorMessage_B = other.GetComponent<DoorAnimManager>().midID;
-            elevatorMessage_C = other.GetComponent<DoorAnimManager>().bottomID;
+            elevatorMessage_A = other.GetComponent<ElevatorManager>().upperID;
+            elevatorMessage_B = other.GetComponent<ElevatorManager>().midID;
+            elevatorMessage_C = other.GetComponent<ElevatorManager>().bottomID;
+            
+            elevatorTravel = other.GetComponent<ElevatorManager>().elevatorTravel;
             
             //Debug.LogError("Elevador");
             canTakeElevatorUp = true;
